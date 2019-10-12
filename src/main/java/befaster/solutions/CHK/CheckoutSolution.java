@@ -231,18 +231,22 @@ public class CheckoutSolution {
         });
         for (Item item : anotherFreeItems)
         {
-//            total = getAnotherDiscountedForFree(total, item.)
+            total = getAnotherDiscountedForFree(total, item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER),
+                    item.getTotalBought(), items.get(item.getFreeItemName()), items);
+            // Already calculated to total, so remove from map
+            items.remove(item.getName());
         }
         for (Map.Entry<String, Item> entry : items.entrySet())
         {
             final Item item = entry.getValue();
             if (item.getDiscountType() == MULTIPLE_DISCOUNTS)
             {
-
+                total = getOffersWithMultiDiscounts(total, item);
             }
             if (item.getDiscountType() == DISCOUNTED)
             {
-
+                total = calculateDiscount(total, item.getTotalBought(), item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER),
+                        item.getDiscountProperties().get(SMALL_DISCOUNT_DEDUCTION));
             }
             if (item.getDiscountType() == SAME_FREE)
             {
@@ -290,33 +294,20 @@ public class CheckoutSolution {
 
     private Integer getOffersWithMultiDiscounts(Integer total, Item item)
     {
-//        if (aRepeated >= 5)
-//        {
-//            total = total - aRepeated / 5 * A_PRICE;
-//            int remainder = aRepeated % 5;
-//            if (remainder >= 3) {
-//                total = getDiscount(total, remainder, 3, A_PRICE, 4);
-//            }
-//        }
-//        else
-//        {
-//            total = getDiscount(total, aRepeated, 3, A_PRICE, 4);
-//        }
-        return total;
-    }
-
-    private Integer getBAndEDiscount(Integer total, int bRepeated, int eRepeated)
-    {
-        if (eRepeated > 1)
+        int largeDiscountNumber = item.getDiscountProperties().get(LARGE_DISCOUNT_NUMBER);
+        int largeDiscountDeduction = item.getDiscountProperties().get(LARGE_DISCOUNT_DEDUCTION);
+        int smallDiscountNumber = item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER);
+        int smallDiscountDeduction = item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER);
+        int totalBought = item.getTotalBought();
+        if (totalBought >= largeDiscountNumber)
         {
-            int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
-            total = total - divisionNumber * B_PRICE;
-            bRepeated = bRepeated - divisionNumber;
-            total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
-        }
-        else if (bRepeated > 1)
-        {
-            total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
+            total = totalBought / largeDiscountNumber * largeDiscountDeduction;
+            int remainder = totalBought % largeDiscountNumber;
+            // Now calculate the remainder in the smaller discount
+            if (remainder >= smallDiscountNumber)
+            {
+                total = calculateDiscount(total, remainder, smallDiscountNumber, smallDiscountDeduction);
+            }
         }
         return total;
     }
@@ -338,14 +329,31 @@ public class CheckoutSolution {
         return total;
     }
 
+//    private Integer getBAndEDiscount(Integer total, int bRepeated, int eRepeated)
+//    {
+//        if (eRepeated > 1)
+//        {
+//            int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
+//            total = total - divisionNumber * B_PRICE;
+//            bRepeated = bRepeated - divisionNumber;
+//            total = calculateDiscount(total, bRepeated, 2, B_PRICE, 5);
+//        }
+//        else if (bRepeated > 1)
+//        {
+//            total = calculateDiscount(total, bRepeated, 2, B_PRICE, 5);
+//        }
+//        return total;
+//    }
+
     private Integer getFDiscount(Integer total, int fRepeated)
     {
         total = total - fRepeated / 3 * F_PRICE;
         return total;
     }
 
-    private int getDiscount(Integer total, int repeats, int division, int price, int discountNumber)
+    private int calculateDiscount(Integer total, int totalPerItem, int discountNumber, int discountPrice)
     {
-        return total - repeats / division * price * discountNumber / 10;
+        return total - totalPerItem / discountNumber * discountPrice;
     }
 }
+
