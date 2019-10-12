@@ -76,7 +76,3 @@ public class CheckoutSolution {
         return total - aRepeated / 3 * A_PRICE * 4 / 10;
     }
 }
-
-
-
-
