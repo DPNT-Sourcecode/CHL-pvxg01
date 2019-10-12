@@ -14,4 +14,3 @@ public enum DiscountType
     /*Receive same item free discount*/
     SAME_FREE;
 }
-

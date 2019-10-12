@@ -127,4 +127,3 @@ public class Item
         this.discountProperties = discountProperties;
     }
 }
-
