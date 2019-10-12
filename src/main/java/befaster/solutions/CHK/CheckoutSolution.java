@@ -123,8 +123,10 @@ public class CheckoutSolution {
 //            | Y    | 10    |                        |
 //            | Z    | 50    |
 
-    public Integer checkout(String skus) {
-        if (StringUtils.isBlank(skus)) {
+    public Integer checkout(String skus)
+    {
+        if (StringUtils.isBlank(skus))
+        {
             return 0;
         }
         final String[] allItems = skus.split("(?!^)");
@@ -132,89 +134,85 @@ public class CheckoutSolution {
         final Map<String, Item> items = new HashMap<>();
 
         Integer total = 0;
-        int aRepeated = 0;
-        int bRepeated = 0;
-        int eRepeated = 0;
-        int fRepeated = 0;
         for (String item : allItems) {
             switch (item) {
                 case "A":
-                    addItemAndGetUpdatedTotal(items, total, A_PRICE, "A", 5, 50, 3, 20, MULTIPLE_DISCOUNTS, null);
+                    total = addItemAndGetUpdatedTotal(items, total, A_PRICE, "A", 5, 50, 3, 20, MULTIPLE_DISCOUNTS, null);
                     break;
                 case "B":
-                    addItemAndGetUpdatedTotal(items, total, B_PRICE, "B", 0, 0, 2, 15, DISCOUNTED, null);
+                    total = addItemAndGetUpdatedTotal(items, total, B_PRICE, "B", 0, 0, 2, 15, DISCOUNTED, null);
                     break;
                 case "C":
-                    addItemAndGetUpdatedTotal(items, total, C_PRICE, "C", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, C_PRICE, "C", 0, 0, 0, 0, null, null);
                     break;
                 case "D":
-                    addItemAndGetUpdatedTotal(items, total, D_PRICE, "D", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, D_PRICE, "D", 0, 0, 0, 0, null, null);
                     break;
                 case "E":
-                    addItemAndGetUpdatedTotal(items, total, E_PRICE, "E", 0, 0, 2, 0, ANOTHER_FREE, "B");
+                    total = addItemAndGetUpdatedTotal(items, total, E_PRICE, "E", 0, 0, 2, 0, ANOTHER_FREE, "B");
                     break;
                 case "F":
-                    addItemAndGetUpdatedTotal(items, total, F_PRICE, "F", 0, 0, 3, 0, SAME_FREE, null);
+                    total = addItemAndGetUpdatedTotal(items, total, F_PRICE, "F", 0, 0, 3, 0, SAME_FREE, null);
                     break;
                 case "G":
-                    addItemAndGetUpdatedTotal(items, total, G_PRICE, "G", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, G_PRICE, "G", 0, 0, 0, 0, null, null);
                     break;
                 case "H":
-                    addItemAndGetUpdatedTotal(items, total, H_PRICE, "H", 10, 10, 5, 5, MULTIPLE_DISCOUNTS, null);
+                    total = addItemAndGetUpdatedTotal(items, total, H_PRICE, "H", 10, 10, 5, 5, MULTIPLE_DISCOUNTS, null);
                     break;
                 case "I":
-                    addItemAndGetUpdatedTotal(items, total, I_PRICE, "I", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, I_PRICE, "I", 0, 0, 0, 0, null, null);
                     break;
                 case "J":
-                    addItemAndGetUpdatedTotal(items, total, J_PRICE, "J", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, J_PRICE, "J", 0, 0, 0, 0, null, null);
                     break;
                 case "K":
-                    addItemAndGetUpdatedTotal(items, total, K_PRICE, "K", 0, 0, 2, 10, DISCOUNTED, null);
+                    total = addItemAndGetUpdatedTotal(items, total, K_PRICE, "K", 0, 0, 2, 10, DISCOUNTED, null);
                     break;
                 case "L":
-                    addItemAndGetUpdatedTotal(items, total, L_PRICE, "L", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, L_PRICE, "L", 0, 0, 0, 0, null, null);
                     break;
                 case "M":
-                    addItemAndGetUpdatedTotal(items, total, M_PRICE, "M", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, M_PRICE, "M", 0, 0, 0, 0, null, null);
                     break;
                 case "N":
-                    addItemAndGetUpdatedTotal(items, total, N_PRICE, "N", 0, 0, 3, 0, ANOTHER_FREE, "M");
+                    total = addItemAndGetUpdatedTotal(items, total, N_PRICE, "N", 0, 0, 3, 0, ANOTHER_FREE, "M");
                     break;
                 case "0":
-                    addItemAndGetUpdatedTotal(items, total, O_PRICE, "O", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, O_PRICE, "O", 0, 0, 0, 0, null, null);
                     break;
                 case "P":
-                    addItemAndGetUpdatedTotal(items, total, P_PRICE, "P", 0, 0, 5, 50, DISCOUNTED, null);
+                    total = addItemAndGetUpdatedTotal(items, total, P_PRICE, "P", 0, 0, 5, 50, DISCOUNTED, null);
                     break;
                 case "Q":
-                    addItemAndGetUpdatedTotal(items, total, Q_PRICE, "Q", 0, 0, 3, 10, DISCOUNTED, null);
+                    total = addItemAndGetUpdatedTotal(items, total, Q_PRICE, "Q", 0, 0, 3, 10, DISCOUNTED, null);
                     break;
                 case "R":
-                    addItemAndGetUpdatedTotal(items, total, R_PRICE, "R", 0, 0, 3, 0, ANOTHER_FREE, "Q");
+                    total = addItemAndGetUpdatedTotal(items, total, R_PRICE, "R", 0, 0, 3, 0, ANOTHER_FREE, "Q");
                     break;
                 case "S":
-                    addItemAndGetUpdatedTotal(items, total, S_PRICE, "S", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, S_PRICE, "S", 0, 0, 0, 0, null, null);
                     break;
                 case "T":
-                    addItemAndGetUpdatedTotal(items, total, T_PRICE, "T", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, T_PRICE, "T", 0, 0, 0, 0, null, null);
                     break;
                 case "U":
-                    addItemAndGetUpdatedTotal(items, total, U_PRICE, "U", 0, 0, 4, 0, SAME_FREE, null);
+                    total = addItemAndGetUpdatedTotal(items, total, U_PRICE, "U", 0, 0, 4, 0, SAME_FREE, null);
                     break;
                 case "V":
-                    addItemAndGetUpdatedTotal(items, total, V_PRICE, "V", 3, 20, 3, 10, MULTIPLE_DISCOUNTS, null);
+                    total = addItemAndGetUpdatedTotal(items, total, V_PRICE, "V", 3, 20, 3, 10, MULTIPLE_DISCOUNTS, null);
                     break;
                 case "W":
-                    addItemAndGetUpdatedTotal(items, total, W_PRICE, "W", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, W_PRICE, "W", 0, 0, 0, 0, null, null);
                     break;
                 case "X":
-                    addItemAndGetUpdatedTotal(items, total, X_PRICE, "X", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, X_PRICE, "X", 0, 0, 0, 0, null, null);
                     break;
                 case "Y":
-                    addItemAndGetUpdatedTotal(items, total, Y_PRICE, "Y", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, Y_PRICE, "Y", 0, 0, 0, 0, null, null);
                     break;
                 case "Z":
-                    addItemAndGetUpdatedTotal(items, total, Z_PRICE, "Z", 0, 0, 0, 0, null, null);
+                    total = addItemAndGetUpdatedTotal(items, total, Z_PRICE, "Z", 0, 0, 0, 0, null, null);
                     break;
                 default:
                     return -1;
@@ -250,13 +248,9 @@ public class CheckoutSolution {
             }
             if (item.getDiscountType() == SAME_FREE)
             {
-
+                total = getSameFree(total, item);
             }
         }
-
-//            total = getOffersWithMultiDiscounts(total, aRepeated);
-//            total = getBAndEDiscount(total, bRepeated, eRepeated);
-//            total = getFDiscount(total, fRepeated);
         return total;
     }
 
@@ -287,6 +281,7 @@ public class CheckoutSolution {
             discountProperties.put(LARGE_DISCOUNT_DEDUCTION, largeDiscountDeduction);
             discountProperties.put(SMALL_DISCOUNT_NUMBER, smallDiscountNumber);
             discountProperties.put(SMALL_DISCOUNT_DEDUCTION, smallDiscountDeduction);
+            item.setDiscountProperties(discountProperties);
         }
         items.put(itemName, item);
         return total;
@@ -329,25 +324,9 @@ public class CheckoutSolution {
         return total;
     }
 
-//    private Integer getBAndEDiscount(Integer total, int bRepeated, int eRepeated)
-//    {
-//        if (eRepeated > 1)
-//        {
-//            int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
-//            total = total - divisionNumber * B_PRICE;
-//            bRepeated = bRepeated - divisionNumber;
-//            total = calculateDiscount(total, bRepeated, 2, B_PRICE, 5);
-//        }
-//        else if (bRepeated > 1)
-//        {
-//            total = calculateDiscount(total, bRepeated, 2, B_PRICE, 5);
-//        }
-//        return total;
-//    }
-
-    private Integer getFDiscount(Integer total, int fRepeated)
+    private Integer getSameFree(Integer total, Item item)
     {
-        total = total - fRepeated / 3 * F_PRICE;
+        total = total - item.getTotalBought() / item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER) * item.getPrice();
         return total;
     }
 
@@ -356,4 +335,5 @@ public class CheckoutSolution {
         return total - totalPerItem / discountNumber * discountPrice;
     }
 }
+
 
