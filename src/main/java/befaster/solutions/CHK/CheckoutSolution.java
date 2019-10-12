@@ -61,10 +61,11 @@ public class CheckoutSolution {
         else
         {
             total = getTotalByThree(total, aRepeated);
-            total = total - bRepeated / 2 * B_PRICE * 5 / 10;
-            if (bRepeated > 0) {
+            if (eRepeated > 0)
+            {
                 total = total - eRepeated / 2 * B_PRICE;
             }
+            total = total - bRepeated / 2 * B_PRICE * 5 / 10;
         }
 
         return total;
@@ -75,6 +76,7 @@ public class CheckoutSolution {
         return total - aRepeated / 3 * A_PRICE * 4 / 10;
     }
 }
+
 
 
 
