@@ -63,7 +63,8 @@ public class CheckoutSolution {
             total = getTotalByThree(total, aRepeated);
             if (eRepeated > 1)
             {
-                total = total - eRepeated / 2 * B_PRICE;
+                int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
+                total = total - divisionNumber * B_PRICE;
             }
             else if (bRepeated > 1)
             {
@@ -79,4 +80,5 @@ public class CheckoutSolution {
         return total - aRepeated / 3 * A_PRICE * 4 / 10;
     }
 }
+
 
