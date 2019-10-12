@@ -292,7 +292,7 @@ public class CheckoutSolution {
         int largeDiscountNumber = item.getDiscountProperties().get(LARGE_DISCOUNT_NUMBER);
         int largeDiscountDeduction = item.getDiscountProperties().get(LARGE_DISCOUNT_DEDUCTION);
         int smallDiscountNumber = item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER);
-        int smallDiscountDeduction = item.getDiscountProperties().get(SMALL_DISCOUNT_NUMBER);
+        int smallDiscountDeduction = item.getDiscountProperties().get(SMALL_DISCOUNT_DEDUCTION);
         int totalBought = item.getTotalBought();
         if (totalBought >= largeDiscountNumber)
         {
@@ -303,6 +303,10 @@ public class CheckoutSolution {
             {
                 total = calculateDiscount(total, remainder, smallDiscountNumber, smallDiscountDeduction);
             }
+        }
+        else
+        {
+            total = calculateDiscount(total, totalBought, smallDiscountNumber, smallDiscountDeduction);
         }
         return total;
     }
@@ -335,5 +339,6 @@ public class CheckoutSolution {
         return total - totalPerItem / discountNumber * discountPrice;
     }
 }
+
 
 
