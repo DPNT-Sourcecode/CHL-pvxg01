@@ -106,6 +106,9 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUV"), equalTo(1445));
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVV"), equalTo(1485));
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVV"), equalTo(1575));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVV"), equalTo(1615));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVV"), equalTo(1705));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVVV"), equalTo(1745));
     }
 
 //    Our price table and offers:
@@ -140,6 +143,7 @@ public class CheckoutSolutionTest {
 //            | Z    | 50    |                        |
 //            +------+-------+------------------------+
 }
+
 
 
 
