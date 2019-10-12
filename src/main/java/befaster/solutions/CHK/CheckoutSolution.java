@@ -33,14 +33,16 @@ public class CheckoutSolution {
 
             }
         }
-        if (aRepeated != 0 && aRepeated % 3 == 0)
-        {
+//        if (aRepeated != 0 && aRepeated / 3 > 0)
+//        {
+//
             total = total - aRepeated / 3 * 20;
-        }
-        if (bRepeated != 0 && bRepeated % 2 == 0)
-        {
+//        }
+//        if (bRepeated != 0 && bRepeated % 2 == 0)
+//        {
             total = total - bRepeated / 2 * 15;
-        }
+//        }
         return total;
     }
 }
+
