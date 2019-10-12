@@ -200,7 +200,7 @@ public class CheckoutSolution {
                     total = addItemAndGetUpdatedTotal(items, total, U_PRICE, "U", 0, 0, 4, 0, SAME_FREE, null);
                     break;
                 case "V":
-                    total = addItemAndGetUpdatedTotal(items, total, V_PRICE, "V", 3, 20, 3, 10, MULTIPLE_DISCOUNTS, null);
+                    total = addItemAndGetUpdatedTotal(items, total, V_PRICE, "V", 3, 20, 2, 10, MULTIPLE_DISCOUNTS, null);
                     break;
                 case "W":
                     total = addItemAndGetUpdatedTotal(items, total, W_PRICE, "W", 0, 0, 0, 0, null, null);
@@ -339,3 +339,4 @@ public class CheckoutSolution {
         return total - totalPerItem / discountNumber * discountPrice;
     }
 }
+
