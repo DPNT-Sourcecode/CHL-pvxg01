@@ -36,11 +36,18 @@ public class CheckoutSolution {
 
             }
         }
-        int discountA = aRepeated % 3;
-        int discountB = aRepeated % 2;
-        return total - discountA * 20 - discountB - 15;
+        if (aRepeated != 0 && aRepeated % 3 == 0)
+        {
+            total = total - aRepeated / 3 * 20;
+        }
+        if (bRepeated != 0 && bRepeated % 2 == 0)
+        {
+            total = total - bRepeated / 2 * 15;
+        }
+        return total;
     }
 }
+
 
 
 
