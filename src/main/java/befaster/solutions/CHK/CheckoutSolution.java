@@ -296,7 +296,7 @@ public class CheckoutSolution {
         int totalBought = item.getTotalBought();
         if (totalBought >= largeDiscountNumber)
         {
-            total = totalBought / largeDiscountNumber * largeDiscountDeduction;
+            total = total - totalBought / largeDiscountNumber * largeDiscountDeduction;
             int remainder = totalBought % largeDiscountNumber;
             // Now calculate the remainder in the smaller discount
             if (remainder >= smallDiscountNumber)
@@ -339,6 +339,7 @@ public class CheckoutSolution {
         return total - totalPerItem / discountNumber * discountPrice;
     }
 }
+
 
 
 
