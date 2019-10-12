@@ -130,4 +130,3 @@ public class CheckoutSolution {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
-
