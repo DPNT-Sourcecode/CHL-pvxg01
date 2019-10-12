@@ -3,6 +3,17 @@ package befaster.solutions.CHK;
 import org.apache.commons.lang3.StringUtils;
 
 public class CheckoutSolution {
+
+    public static final int A_PRICE = 50;
+
+    public static final int B_PRICE = 30;
+
+    public static final int C_PRICE = 20;
+
+    public static final int D_PRICE = 15;
+
+    public static final int E_PRICE = 40;
+
     public Integer checkout(String skus) {
         if (StringUtils.isBlank(skus)) {
             return 0;
@@ -15,28 +26,32 @@ public class CheckoutSolution {
         for (String item : allItems) {
             switch (item) {
                 case "A":
-                    total = total + 50;
+                    total = total + A_PRICE;
                     aRepeated++;
                     break;
                 case "B":
-                    total = total + 30;
+                    total = total + B_PRICE;
                     bRepeated++;
                     break;
                 case "C":
-                    total = total + 20;
+                    total = total + C_PRICE;
                     break;
                 case "D":
-                    total = total + 15;
+                    total = total + D_PRICE;
                     break;
+//                case "E":
+//                    total = total + E_PRICE;
+//                    break;
                 default:
                     return -1;
 
             }
         }
-        total = total - aRepeated / 3 * 20;
-        total = total - bRepeated / 2 * 15;
+        total = total - aRepeated / 3 * A_PRICE * 4 /10;
+        total = total - bRepeated / 2 * B_PRICE * 5 /10;
         return total;
     }
 }
+
 
 
