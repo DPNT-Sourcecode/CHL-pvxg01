@@ -80,9 +80,10 @@ public class CheckoutSolutionTest {
     @Test
     public void checkout_solution_test_R4()
     {
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), equalTo(715));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), equalTo(965));
     }
 }
+
 
 
 
