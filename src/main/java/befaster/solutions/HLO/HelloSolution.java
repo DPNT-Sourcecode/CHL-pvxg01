@@ -2,8 +2,11 @@ package befaster.solutions.HLO;
 
 public class HelloSolution {
     public String hello(String friendName) {
-        return "Hello, World!";
+        final StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Hello, ").append(friendName).append("!");
+        return stringBuilder.toString();
     }
 }
+
 
 
