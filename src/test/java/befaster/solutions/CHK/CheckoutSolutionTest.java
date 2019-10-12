@@ -81,6 +81,7 @@ public class CheckoutSolutionTest {
     public void checkout_solution_test_R4()
     {
         assertThat(checkoutSolution.checkout("HHHHH"), equalTo(45));
+        assertThat(checkoutSolution.checkout("HHHHHHHHH"), equalTo(85));
         assertThat(checkoutSolution.checkout("HHHHHHHHHH"), equalTo(80));
         assertThat(checkoutSolution.checkout("HHHHHHHHHHH"), equalTo(90));
         assertThat(checkoutSolution.checkout("HHHHHHHHHHHH"), equalTo(100));
@@ -112,18 +113,19 @@ public class CheckoutSolutionTest {
 
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQ"), equalTo(1155));
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQ"), equalTo(1215));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQ"), equalTo(1245));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUU"), equalTo(1325));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUU"), equalTo(1325));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUU"), equalTo(1445));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUUU"), equalTo(1445));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUV"), equalTo(1445));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVV"), equalTo(1485));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVV"), equalTo(1575));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVV"), equalTo(1615));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVV"), equalTo(1705));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVVV"), equalTo(1745));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQ"), equalTo(1235));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUU"), equalTo(1315));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUU"), equalTo(1315));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUU"), equalTo(1435));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUUU"), equalTo(1435));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUV"), equalTo(1435));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVV"), equalTo(1475));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVV"), equalTo(1565));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVV"), equalTo(1605));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVV"), equalTo(1695));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVVV"), equalTo(1735));
     }
 }
+
 
 
