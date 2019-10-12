@@ -49,31 +49,42 @@ public class CheckoutSolution {
 
             }
         }
+            total = getADiscount(total, aRepeated);
+            total = getBAndEDiscount(total, bRepeated, eRepeated);
+
+        return total;
+    }
+
+    private Integer getADiscount(Integer total, int aRepeated)
+    {
         if (aRepeated >= 5)
         {
             total = total - aRepeated / 5 * A_PRICE;
             int remainder = aRepeated % 5;
-            if (remainder >= 3)
-            {
+            if (remainder >= 3) {
                 total = getDiscount(total, remainder, 3, A_PRICE, 4);
             }
         }
         else
         {
             total = getDiscount(total, aRepeated, 3, A_PRICE, 4);
-            if (eRepeated > 1)
-            {
-                int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
-                total = total - divisionNumber * B_PRICE;
-                bRepeated = bRepeated - divisionNumber;
-                total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
-            }
-            else if (bRepeated > 1)
-            {
-                total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
-            }
         }
+        return total;
+    }
 
+    private Integer getBAndEDiscount(Integer total, int bRepeated, int eRepeated)
+    {
+        if (eRepeated > 1)
+        {
+            int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
+            total = total - divisionNumber * B_PRICE;
+            bRepeated = bRepeated - divisionNumber;
+            total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
+        }
+        else if (bRepeated > 1)
+        {
+            total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
+        }
         return total;
     }
 
@@ -82,3 +93,4 @@ public class CheckoutSolution {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
+
