@@ -97,18 +97,7 @@ public class CheckoutSolution {
 
     private Integer getFDiscount(Integer total, int fRepeated)
     {
-        if (fRepeated > 2)
-        {
-            int remainder = fRepeated % 2;
-            total = total - fRepeated / (2 + remainder) * F_PRICE;
-        }
-//        if (fRepeated > 1)
-//        {
-//        }
-//        else if (fRepeated > 1)
-//        {
-//            total = getDiscount(total, fRepeated, 2, B_PRICE, 5);
-//        }
+        total = total - fRepeated / 3 * F_PRICE;
         return total;
     }
 
@@ -117,6 +106,7 @@ public class CheckoutSolution {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
+
 
 
 

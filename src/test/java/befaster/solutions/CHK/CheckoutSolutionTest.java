@@ -65,12 +65,13 @@ public class CheckoutSolutionTest {
     @Test
     public void checkout_solution_test_R3()
     {
-//        assertThat(checkoutSolution.checkout("FFF"), equalTo(20));
-//        assertThat(checkoutSolution.checkout("FF"), equalTo(20));
-//        assertThat(checkoutSolution.checkout("FFFFF"), equalTo(40));
+        assertThat(checkoutSolution.checkout("FFF"), equalTo(20));
+        assertThat(checkoutSolution.checkout("FF"), equalTo(20));
+        assertThat(checkoutSolution.checkout("FFFFF"), equalTo(40));
         assertThat(checkoutSolution.checkout("FFFFFF"), equalTo(40));
         assertThat(checkoutSolution.checkout("FFFFFFF"), equalTo(50));
     }
 }
+
 
 
