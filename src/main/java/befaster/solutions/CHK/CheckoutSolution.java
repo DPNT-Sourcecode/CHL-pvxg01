@@ -53,7 +53,10 @@ public class CheckoutSolution {
         {
             total = total - aRepeated / 5 * A_PRICE;
             int remainder = aRepeated % 5;
-
+            if (remainder >= 3)
+            {
+                total = getTotalByThree(total, remainder);
+            }
         }
         else
         {
@@ -68,8 +71,10 @@ public class CheckoutSolution {
         return total;
     }
 
-    private int getTotalByThree(Integer total, int aRepeated) {
+    private int getTotalByThree(Integer total, int aRepeated)
+    {
         return total - aRepeated / 3 * A_PRICE * 4 / 10;
     }
 }
+
 
