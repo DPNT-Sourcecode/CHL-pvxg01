@@ -273,7 +273,7 @@ public class CheckoutSolution {
             item.setName(itemName);
             item.setPrice(price);
             item.addToTotalBought();
-            item.setName("A");
+            item.setName(itemName);
             item.setDiscountType(discountType);
             item.setFreeItemName(freeItemName);
             final Map<String, Integer>  discountProperties = new HashMap<>();
@@ -339,6 +339,7 @@ public class CheckoutSolution {
         return total - totalPerItem / discountNumber * discountPrice;
     }
 }
+
 
 
 
