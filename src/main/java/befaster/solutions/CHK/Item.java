@@ -2,6 +2,9 @@ package befaster.solutions.CHK;
 
 public class Item
 {
+    /* The name for the item*/
+    private String name;
+
     /* The price*/
     private int price;
 
@@ -16,6 +19,26 @@ public class Item
     public int getPrice()
     {
         return price;
+    }
+
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
+    public String getName()
+    {
+        return name;
+    }
+
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
+    public void setName(String name)
+    {
+        this.name = name;
     }
 
     /**
@@ -43,8 +66,9 @@ public class Item
      *
      * @param totalBought the total bought
      */
-    public void setTotalBought(int totalBought)
+    public void addToTotalBought(int totalBought)
     {
-        this.totalBought = totalBought;
+        this.totalBought++;
     }
 }
+

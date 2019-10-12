@@ -2,6 +2,9 @@ package befaster.solutions.CHK;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CheckoutSolution {
 
     /* The price for item A*/
@@ -28,6 +31,7 @@ public class CheckoutSolution {
         }
         final String[] allItems = skus.split("(?!^)");
 
+        final List<Item> items = new ArrayList<>();
         Integer total = 0;
         int aRepeated = 0;
         int bRepeated = 0;
@@ -36,6 +40,7 @@ public class CheckoutSolution {
         for (String item : allItems) {
             switch (item) {
                 case "A":
+                    addItem(items);
                     total = total + A_PRICE;
                     aRepeated++;
                     break;
@@ -66,6 +71,19 @@ public class CheckoutSolution {
             total = getBAndEDiscount(total, bRepeated, eRepeated);
             total = getFDiscount(total, fRepeated);
         return total;
+    }
+
+    private void addItem(final List<Item> items)
+    {
+        Item item = new Item();
+        item.setPrice(A_PRICE);
+        item.addToTotalBought(1);
+        item.setName("A");
+        if (items.contains(item))
+        {
+
+        }
+        items.add(item);
     }
 
     private Integer getADiscount(Integer total, int aRepeated)
@@ -112,3 +130,4 @@ public class CheckoutSolution {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
+
