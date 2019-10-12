@@ -14,6 +14,8 @@ public class CheckoutSolution {
 
     public static final int E_PRICE = 40;
 
+    public static final int F_PRICE = 10;
+
     public Integer checkout(String skus) {
         if (StringUtils.isBlank(skus)) {
             return 0;
@@ -24,6 +26,7 @@ public class CheckoutSolution {
         int aRepeated = 0;
         int bRepeated = 0;
         int eRepeated = 0;
+        int fRepeated = 0;
         for (String item : allItems) {
             switch (item) {
                 case "A":
@@ -44,6 +47,10 @@ public class CheckoutSolution {
                     total = total + E_PRICE;
                     eRepeated++;
                     break;
+                case "F":
+                    total = total + F_PRICE;
+                    fRepeated++;
+                    break;
                 default:
                     return -1;
 
@@ -51,7 +58,7 @@ public class CheckoutSolution {
         }
             total = getADiscount(total, aRepeated);
             total = getBAndEDiscount(total, bRepeated, eRepeated);
-
+            total = getFDiscount(total, fRepeated);
         return total;
     }
 
@@ -88,9 +95,23 @@ public class CheckoutSolution {
         return total;
     }
 
+    private Integer getFDiscount(Integer total, int fRepeated)
+    {
+        total = total - fRepeated / 2 * A_PRICE;
+        if (fRepeated > 1)
+        {
+        }
+        else if (fRepeated > 1)
+        {
+            total = getDiscount(total, fRepeated, 2, B_PRICE, 5);
+        }
+        return total;
+    }
+
     private int getDiscount(Integer total, int repeats, int division, int price, int discountNumber)
     {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
+
 
