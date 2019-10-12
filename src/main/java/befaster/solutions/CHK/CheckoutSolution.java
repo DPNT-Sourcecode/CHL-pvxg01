@@ -3,6 +3,8 @@ package befaster.solutions.CHK;
 public class CheckoutSolution {
     public Integer checkout(String skus)
     {
+        if ()
+        char[] allItems =
         switch (skus)
         {
             case "A":
@@ -23,5 +25,6 @@ public class CheckoutSolution {
         }
     }
 }
+
 
 
