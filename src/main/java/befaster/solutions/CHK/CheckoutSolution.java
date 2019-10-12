@@ -66,26 +66,28 @@ public class CheckoutSolution {
                 int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
                 total = total - divisionNumber * B_PRICE;
                 bRepeated = bRepeated - divisionNumber;
-                total = getTotalByTwo(total, bRepeated, 2, B_PRICE, 5);
+                total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
             }
             else if (bRepeated > 1)
             {
-                total = getTotalByTwo(total, bRepeated, 2, B_PRICE, 5);
+                total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
             }
         }
 
         return total;
     }
 
-    private int getTotalByTwo(Integer total, int bRepeated, int i, int bPrice, int i2) {
-        return total - bRepeated / i * bPrice * i2 / 10;
+    private int getDiscount(Integer total, int repeats, int division, int price, int discountNumber)
+    {
+        return total - repeats / division * price * discountNumber / 10;
     }
 
     private int getTotalByThree(Integer total, int aRepeated)
     {
-        return getTotalByTwo(total, aRepeated, 3, A_PRICE, 4);
+        return getDiscount(total, aRepeated, 3, A_PRICE, 4);
     }
 }
+
 
 
 
