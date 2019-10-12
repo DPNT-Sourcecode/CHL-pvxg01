@@ -41,13 +41,15 @@ public class CheckoutSolutionTest {
     @Test
     public void checkout_solution_test_R2()
     {
-        assertThat(checkoutSolution.checkout("AAAAAAAA"), equalTo(330));
-        assertThat(checkoutSolution.checkout("AAAAAAAAA"), equalTo(380));
-        assertThat(checkoutSolution.checkout("AAAAAAAAAA"), equalTo(400));
-        assertThat(checkoutSolution.checkout("AAAA"), equalTo(180));
-//        assertThat(checkoutSolution.checkout("EEB"), equalTo(80));
-//        assertThat(checkoutSolution.checkout("EEEB"), equalTo(120));
-//        assertThat(checkoutSolution.checkout("EEEBB"), equalTo(150));
+//        assertThat(checkoutSolution.checkout("AAAAAAAA"), equalTo(330));
+//        assertThat(checkoutSolution.checkout("AAAAAAAAA"), equalTo(380));
+//        assertThat(checkoutSolution.checkout("AAAAAAAAAA"), equalTo(400));
+//        assertThat(checkoutSolution.checkout("AAAAAAAAAAA"), equalTo(450));
+//        assertThat(checkoutSolution.checkout("AAAA"), equalTo(180));
+        assertThat(checkoutSolution.checkout("EEB"), equalTo(80));
+        assertThat(checkoutSolution.checkout("EEEB"), equalTo(120));
+        assertThat(checkoutSolution.checkout("EEEBB"), equalTo(150));
     }
 }
+
 
