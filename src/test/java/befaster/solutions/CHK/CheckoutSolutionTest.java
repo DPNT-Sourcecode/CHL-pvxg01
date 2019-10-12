@@ -80,6 +80,10 @@ public class CheckoutSolutionTest {
     @Test
     public void checkout_solution_test_R4()
     {
+        assertThat(checkoutSolution.checkout("HHHHHHHHHH"), equalTo(80));
+        assertThat(checkoutSolution.checkout("HHHHHHHHHHH"), equalTo(90));
+        assertThat(checkoutSolution.checkout("HHHHHHHHHHHH"), equalTo(10));
+
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), equalTo(965));
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZK"), equalTo(1035));
         assertThat(checkoutSolution.checkout("ABCDEFGIJKLMNOPQRSTUVWXYZ"), equalTo(955));
@@ -120,3 +124,4 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHHHHHHHQQQQQUUUUUVVVVVVVV"), equalTo(1745));
     }
 }
+
