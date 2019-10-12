@@ -49,12 +49,27 @@ public class CheckoutSolution {
 
             }
         }
-        total = total - aRepeated / 3 * A_PRICE * 4 /10;
+        if (aRepeated >= 5)
+        {
+            total = total - aRepeated / 5 * A_PRICE;
+            int remainder = aRepeated % 5;
+
+        }
+        else
+        {
+            total = getTotalByThree(total, aRepeated);
+        }
         total = total - bRepeated / 2 * B_PRICE * 5 /10;
         if (bRepeated > 0)
         {
             total = total - eRepeated / 2 * B_PRICE;
         }
+
         return total;
     }
+
+    private int getTotalByThree(Integer total, int aRepeated) {
+        return total - aRepeated / 3 * A_PRICE * 4 / 10;
+    }
 }
+
