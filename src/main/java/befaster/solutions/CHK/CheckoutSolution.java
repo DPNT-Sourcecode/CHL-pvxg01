@@ -99,7 +99,8 @@ public class CheckoutSolution {
     {
         if (fRepeated > 2)
         {
-            total = total - fRepeated / 2 * F_PRICE;
+            int remainder = fRepeated % 2;
+            total = total - fRepeated / remainder * F_PRICE;
         }
 //        if (fRepeated > 1)
 //        {
@@ -116,6 +117,3 @@ public class CheckoutSolution {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
-
-
-
