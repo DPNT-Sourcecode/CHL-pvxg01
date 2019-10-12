@@ -1,6 +1,5 @@
 package befaster.solutions.CHK;
 
-import befaster.solutions.HLO.HelloSolution;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,4 +27,5 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("E"), equalTo(-1));
     }
 }
+
 
