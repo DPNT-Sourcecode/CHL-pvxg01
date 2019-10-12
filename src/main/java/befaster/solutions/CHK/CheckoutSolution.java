@@ -23,6 +23,7 @@ public class CheckoutSolution {
         Integer total = 0;
         int aRepeated = 0;
         int bRepeated = 0;
+        int eRepeated = 0;
         for (String item : allItems) {
             switch (item) {
                 case "A":
@@ -39,9 +40,10 @@ public class CheckoutSolution {
                 case "D":
                     total = total + D_PRICE;
                     break;
-//                case "E":
-//                    total = total + E_PRICE;
-//                    break;
+                case "E":
+                    total = total + E_PRICE;
+                    eRepeated++;
+                    break;
                 default:
                     return -1;
 
@@ -49,9 +51,11 @@ public class CheckoutSolution {
         }
         total = total - aRepeated / 3 * A_PRICE * 4 /10;
         total = total - bRepeated / 2 * B_PRICE * 5 /10;
+        total = total - eRepeated / 2 * B_PRICE * 5 /10;
         return total;
     }
 }
+
 
 
 
