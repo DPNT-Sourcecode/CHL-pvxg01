@@ -2,9 +2,6 @@ package befaster.solutions.CHK;
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Collections;
-import java.util.stream.Stream;
-
 public class CheckoutSolution {
     public Integer checkout(String skus) {
         if (StringUtils.isBlank(skus)) {
@@ -47,6 +44,7 @@ public class CheckoutSolution {
         return total;
     }
 }
+
 
 
 
