@@ -16,6 +16,9 @@ public class Item
     /* The name of the free item offere for this item*/
     private String freeItemName;
 
+    /* The discount type for this item*/
+    private DiscountType discountType;
+
     /* A map containing discount details for this item*/
     private Map<String, Integer> discountProperties;
 
@@ -105,6 +108,26 @@ public class Item
     public void setFreeItemName(String freeItemName)
     {
         this.freeItemName = freeItemName;
+    }
+
+    /**
+     * Gets discount type.
+     *
+     * @return the discount type
+     */
+    public DiscountType getDiscountType()
+    {
+        return discountType;
+    }
+
+    /**
+     * Sets discount type.
+     *
+     * @param discountType the discount type
+     */
+    public void setDiscountType(DiscountType discountType)
+    {
+        this.discountType = discountType;
     }
 
     /**
