@@ -55,33 +55,38 @@ public class CheckoutSolution {
             int remainder = aRepeated % 5;
             if (remainder >= 3)
             {
-                total = getTotalByThree(total, remainder, 3, A_PRICE, A_PRICE * 4 / 10);
+                total = getTotalByThree(total, remainder);
             }
         }
         else
         {
-            total = getTotalByThree(total, aRepeated, 3, A_PRICE, A_PRICE * 4 / 10);
+            total = getTotalByThree(total, aRepeated);
             if (eRepeated > 1)
             {
                 int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
                 total = total - divisionNumber * B_PRICE;
                 bRepeated = bRepeated - divisionNumber;
-                total = total - bRepeated / 2 * B_PRICE * 5 / 10;
+                total = getTotalByTwo(total, bRepeated, 2, B_PRICE, 5);
             }
             else if (bRepeated > 1)
             {
-                total = total - bRepeated / 2 * B_PRICE * 5 / 10;
+                total = getTotalByTwo(total, bRepeated, 2, B_PRICE, 5);
             }
         }
 
         return total;
     }
 
-    private int getTotalByThree(Integer total, int discountNumber, int divisionNumber, int price, int discont)
+    private int getTotalByTwo(Integer total, int bRepeated, int i, int bPrice, int i2) {
+        return total - bRepeated / i * bPrice * i2 / 10;
+    }
+
+    private int getTotalByThree(Integer total, int aRepeated)
     {
-        return total - discountNumber / divisionNumber * price * discont;
+        return getTotalByTwo(total, aRepeated, 3, A_PRICE, 4);
     }
 }
+
 
 
 
