@@ -59,9 +59,3 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("EEBBB"), equalTo(125));
     }
 }
-
-
-
-
-
-

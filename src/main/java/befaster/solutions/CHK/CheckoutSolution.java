@@ -55,12 +55,12 @@ public class CheckoutSolution {
             int remainder = aRepeated % 5;
             if (remainder >= 3)
             {
-                total = getTotalByThree(total, remainder);
+                total = getDiscount(total, remainder, 3, A_PRICE, 4);
             }
         }
         else
         {
-            total = getTotalByThree(total, aRepeated);
+            total = getDiscount(total, aRepeated, 3, A_PRICE, 4);
             if (eRepeated > 1)
             {
                 int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
@@ -81,16 +81,4 @@ public class CheckoutSolution {
     {
         return total - repeats / division * price * discountNumber / 10;
     }
-
-    private int getTotalByThree(Integer total, int aRepeated)
-    {
-        return getDiscount(total, aRepeated, 3, A_PRICE, 4);
-    }
 }
-
-
-
-
-
-
-
