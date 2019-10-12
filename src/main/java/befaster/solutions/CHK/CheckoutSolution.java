@@ -4,17 +4,23 @@ import org.apache.commons.lang3.StringUtils;
 
 public class CheckoutSolution {
 
-    public static final int A_PRICE = 50;
+    /* The price for item A*/
+    private static final int A_PRICE = 50;
 
-    public static final int B_PRICE = 30;
+    /* The price for item B*/
+    private static final int B_PRICE = 30;
 
-    public static final int C_PRICE = 20;
+    /* The price for item C*/
+    private static final int C_PRICE = 20;
 
-    public static final int D_PRICE = 15;
+    /* The price for item D*/
+    private static final int D_PRICE = 15;
 
-    public static final int E_PRICE = 40;
+    /* The price for item E*/
+    private static final int E_PRICE = 40;
 
-    public static final int F_PRICE = 10;
+    /* The price for item F*/
+    private static final int F_PRICE = 10;
 
     public Integer checkout(String skus) {
         if (StringUtils.isBlank(skus)) {
