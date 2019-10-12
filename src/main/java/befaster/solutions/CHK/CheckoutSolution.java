@@ -231,7 +231,7 @@ public class CheckoutSolution {
         });
         for (Item item : anotherFreeItems)
         {
-
+//            total = getAnotherDiscountedForFree(total, item.)
         }
         for (Map.Entry<String, Item> entry : items.entrySet())
         {
@@ -250,9 +250,9 @@ public class CheckoutSolution {
             }
         }
 
-            total = getOffersWithMultiDiscounts(total, aRepeated);
-            total = getBAndEDiscount(total, bRepeated, eRepeated);
-            total = getFDiscount(total, fRepeated);
+//            total = getOffersWithMultiDiscounts(total, aRepeated);
+//            total = getBAndEDiscount(total, bRepeated, eRepeated);
+//            total = getFDiscount(total, fRepeated);
         return total;
     }
 
@@ -290,18 +290,18 @@ public class CheckoutSolution {
 
     private Integer getOffersWithMultiDiscounts(Integer total, Item item)
     {
-        if (aRepeated >= 5)
-        {
-            total = total - aRepeated / 5 * A_PRICE;
-            int remainder = aRepeated % 5;
-            if (remainder >= 3) {
-                total = getDiscount(total, remainder, 3, A_PRICE, 4);
-            }
-        }
-        else
-        {
-            total = getDiscount(total, aRepeated, 3, A_PRICE, 4);
-        }
+//        if (aRepeated >= 5)
+//        {
+//            total = total - aRepeated / 5 * A_PRICE;
+//            int remainder = aRepeated % 5;
+//            if (remainder >= 3) {
+//                total = getDiscount(total, remainder, 3, A_PRICE, 4);
+//            }
+//        }
+//        else
+//        {
+//            total = getDiscount(total, aRepeated, 3, A_PRICE, 4);
+//        }
         return total;
     }
 
@@ -321,18 +321,19 @@ public class CheckoutSolution {
         return total;
     }
 
-    private Integer getAnotherDiscountedForFree(Integer total, int bRepeated, int eRepeated)
+    private Integer getAnotherDiscountedForFree(Integer total, int numberToGetFree, int totalNonFreeBought, Item freeItem, Map<String, Item> totalItems)
     {
-        if (eRepeated > 1)
+        if (freeItem != null)
         {
-            int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
-            total = total - divisionNumber * B_PRICE;
-            bRepeated = bRepeated - divisionNumber;
-            total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
-        }
-        else if (bRepeated > 1)
-        {
-            total = getDiscount(total, bRepeated, 2, B_PRICE, 5);
+            int freeItemTotal = freeItem.getTotalBought();
+            if (totalNonFreeBought >= numberToGetFree)
+            {
+                int divisionNumber = totalNonFreeBought / numberToGetFree > freeItemTotal ? freeItemTotal : totalNonFreeBought / numberToGetFree;
+                total = total - divisionNumber * freeItem.getPrice();
+                // Remove discounted from total
+                freeItem.setTotalBought(freeItemTotal - totalNonFreeBought / numberToGetFree);
+                totalItems.put(freeItem.getName(), freeItem);
+            }
         }
         return total;
     }
@@ -348,3 +349,4 @@ public class CheckoutSolution {
         return total - repeats / division * price * discountNumber / 10;
     }
 }
+
