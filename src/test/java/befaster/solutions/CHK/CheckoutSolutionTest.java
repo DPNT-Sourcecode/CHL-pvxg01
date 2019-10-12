@@ -22,6 +22,7 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("3A"), equalTo(-1));
         assertThat(checkoutSolution.checkout("AAA"), equalTo(130));
         assertThat(checkoutSolution.checkout("AAAAAA"), equalTo(260));
+        assertThat(checkoutSolution.checkout("AAABB"), equalTo(175));
         assertThat(checkoutSolution.checkout("B"), equalTo(30));
         assertThat(checkoutSolution.checkout("BB"), equalTo(45));
         assertThat(checkoutSolution.checkout("BBBB"), equalTo(90));
@@ -30,4 +31,5 @@ public class CheckoutSolutionTest {
         assertThat(checkoutSolution.checkout("E"), equalTo(-1));
     }
 }
+
 

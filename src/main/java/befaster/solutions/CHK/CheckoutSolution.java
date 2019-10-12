@@ -38,8 +38,9 @@ public class CheckoutSolution {
         }
         int discountA = aRepeated % 3;
         int discountB = aRepeated % 2;
-        return total - discountA * 20;
+        return total - discountA * 20 - discountB - 15;
     }
 }
+
 
 
