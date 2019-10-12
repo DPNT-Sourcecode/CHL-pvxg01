@@ -65,6 +65,8 @@ public class CheckoutSolution {
             {
                 int divisionNumber = eRepeated / 2 > bRepeated ? bRepeated : eRepeated / 2;
                 total = total - divisionNumber * B_PRICE;
+                bRepeated = bRepeated - divisionNumber;
+                total = total - bRepeated / 2 * B_PRICE * 5 / 10;
             }
             else if (bRepeated > 1)
             {
@@ -80,5 +82,6 @@ public class CheckoutSolution {
         return total - aRepeated / 3 * A_PRICE * 4 / 10;
     }
 }
+
 
 
