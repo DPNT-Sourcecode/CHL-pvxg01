@@ -82,6 +82,9 @@ public class CheckoutSolutionTest {
     {
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), equalTo(965));
         assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZK"), equalTo(1035));
-        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZK"), equalTo(1035));
+        assertThat(checkoutSolution.checkout("ABCDEFGIJKLMNOPQRSTUVWXYZ"), equalTo(955));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZHHHHHHHHH"), equalTo(1045));
+        assertThat(checkoutSolution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZKHHHH"), equalTo(1070));
     }
 }
+
